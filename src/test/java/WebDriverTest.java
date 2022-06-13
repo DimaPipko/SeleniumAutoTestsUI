@@ -8,7 +8,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.openqa.selenium.interactions.Actions;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -94,7 +93,7 @@ public class WebDriverTest {
 
 
     @Test
-    public void sortingByNameTest(){
+    public void sortingByNameTest() {
         WebDriver driver = new ChromeDriver();
         driver.get("https://litecart.stqa.ru/en/");
         WebElement rubberDucksMenuItem = driver.findElement(By.xpath("//div[@id='site-menu-wrapper']//li[@class='category-1']"));
@@ -112,6 +111,32 @@ public class WebDriverTest {
         ArrayList<String> sortedNames = new ArrayList<>(names);
         Collections.sort(sortedNames);
         Assert.assertEquals(names, sortedNames);
+        driver.close();
+    }
+
+    @Test
+    public void checkRedLabelTest() {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://litecart.stqa.ru/en/");
+        WebElement elementRedDuck = driver.findElement(By.xpath("//a[@class='link' and contains(@title,'Red')]//div[@title]"));
+        Assert.assertEquals(elementRedDuck.getText(), "NEW");
+        driver.close();
+    }
+
+    @Test
+    public void checkYellowLabelTest() {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://litecart.stqa.ru/en/");
+        WebElement elementYellowDuck = driver.findElement(By.xpath("//a[@class='link' and contains(@title,'Yellow')]//div[@title]"));
+        Assert.assertEquals(elementYellowDuck.getText(), "SALE");
+        driver.close();
+    }
+    @Test
+    public void checkGreenLabelTest() {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://litecart.stqa.ru/en/");
+        WebElement elementGreenDuck = driver.findElement(By.xpath("//a[@class='link' and contains(@title,'Green')]//div[@title]"));
+        Assert.assertEquals(elementGreenDuck.getText(), "NEW");
         driver.close();
     }
 }
