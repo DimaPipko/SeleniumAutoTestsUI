@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RubberDucksSubcategory {
+public class RubberDucksSubcategory extends BasePage{
     private By sortByNameBtn = By.xpath("//a[@class='button' and contains(text(),'Name')]");
     private By sortByPriceBtn = By.xpath("//a[@class='button' and contains(text(),'Name')]");
     private By sortByPopularityBtn;
@@ -24,14 +24,17 @@ public class RubberDucksSubcategory {
     }
 
     public boolean isSubcatecoryPageOpen() {
+        LOG.info("Checking is Subcategory open");
         return driver.findElement(breadcrumbsRubberDuck).isDisplayed();
     }
 
     public void clickSortingByNameBtn() {
+        LOG.info("Click btnSortByName");
         driver.findElement(sortByNameBtn).click();
     }
 
     public List<String> getAllDuckName() {
+        LOG.info("get Duck names");
         List<WebElement> allNames= driver.findElements(By.xpath("//div[@class='name']"));
         ArrayList<String> names = new ArrayList<>();
         for (WebElement a : allNames) {
@@ -48,6 +51,7 @@ public class RubberDucksSubcategory {
     }
 
     public List<Double> getAllDuckPrice() {
+        LOG.info("getting duck prices");
         List<WebElement> allPriceElement = driver.findElements(duckPrice);
         ArrayList<Double> doubles = new ArrayList<>();
         for (WebElement a : allPriceElement) {
@@ -62,6 +66,7 @@ public class RubberDucksSubcategory {
         return doubles;
     }
     public boolean isPriceSortedASC(List<Double> doubles){
+        LOG.info("Checking is sorted ASC");
         ArrayList<Double> sortedDouble = new ArrayList<>(doubles);
         Collections.sort(sortedDouble);
         return sortedDouble.equals(doubles);
