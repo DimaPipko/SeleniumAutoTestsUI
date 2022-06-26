@@ -5,12 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
 public class SiteMenu {
-    public By homePageButton = By.cssSelector(".fa.fa-home");
-    public By rubberDuckButton = By.xpath("//div[@id='site-menu-wrapper']//li[@class='category-1']");
-    public By deliveryInformationButton = By.xpath("//div[@id='site-menu-wrapper']//li[@class='page-2']");
-    public By termsAndConditionButton = By.xpath("//div[@id='site-menu-wrapper']//li[@class='page-4']");
-    public By discountsButton = By.xpath("//div[@id='site-menu-wrapper']//li[@class='page-5']");
-    public By rubberDuckSubcategory = By.xpath("//div[@id='site-menu-wrapper']//li[@class='category-2']");
+    public By btnHomePage = By.cssSelector(".fa.fa-home");
+    public By btnRubberDuck = By.xpath("//div[@id='site-menu-wrapper']//li[@class='category-1']");
+    public By btnDeliveryInformation = By.xpath("//div[@id='site-menu-wrapper']//li[@class='page-2']");
+    public By btnTermsAndCondition = By.xpath("//div[@id='site-menu-wrapper']//li[@class='page-4']");
+    public By btnDiscounts = By.xpath("//div[@id='site-menu-wrapper']//li[@class='page-5']");
+    public By btnRubberDuckSubcategory = By.xpath("//div[@id='site-menu-wrapper']//li[@class='category-2']");
 
     private WebDriver driver;
 
@@ -19,28 +19,28 @@ public class SiteMenu {
     }
 
     public void clickHomePageBtn() {
-        driver.findElement(homePageButton).click();
+        driver.findElement(btnHomePage).click();
     }
 
     public void clickRubberDuckBtn() {
-        driver.findElement(rubberDuckButton).click();
+        driver.findElement(btnRubberDuck).click();
     }
 
     public void clickDeliveryInfoBtn() {
-        driver.findElement(deliveryInformationButton).click();
+        driver.findElement(btnDeliveryInformation).click();
     }
 
     public void clickTermsAndConditionBtn() {
-        driver.findElement(termsAndConditionButton).click();
+        driver.findElement(btnTermsAndCondition).click();
     }
 
     public void clickDiscountBtn() {
-        driver.findElement(discountsButton).click();
+        driver.findElement(btnDiscounts).click();
     }
 
     public void openRDSubcategory() {
         Actions action = new Actions(driver);
-        action.moveToElement(driver.findElement(rubberDuckButton))
-                .moveToElement(driver.findElement(rubberDuckSubcategory)).click().perform();
+        action.moveToElement(driver.findElement(btnRubberDuck))
+                .moveToElement(driver.findElement(btnRubberDuckSubcategory)).click().perform();
     }
 }
