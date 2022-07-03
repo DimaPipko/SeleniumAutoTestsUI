@@ -24,7 +24,7 @@ public class RubberDucksSubcategory extends BasePage{
     }
 
     public boolean isSubcatecoryPageOpen() {
-        LOG.info("Checking is Subcategory open");
+        LOG.debug("Checking is Subcategory open");
         return driver.findElement(breadcrumbsRubberDuck).isDisplayed();
     }
 
@@ -34,7 +34,7 @@ public class RubberDucksSubcategory extends BasePage{
     }
 
     public List<String> getAllDuckName() {
-        LOG.info("get Duck names");
+        LOG.debug("get Duck names");
         List<WebElement> allNames= driver.findElements(By.xpath("//div[@class='name']"));
         ArrayList<String> names = new ArrayList<>();
         for (WebElement a : allNames) {
@@ -51,7 +51,7 @@ public class RubberDucksSubcategory extends BasePage{
     }
 
     public List<Double> getAllDuckPrice() {
-        LOG.info("getting duck prices");
+        LOG.debug("getting duck prices");
         List<WebElement> allPriceElement = driver.findElements(duckPrice);
         ArrayList<Double> doubles = new ArrayList<>();
         for (WebElement a : allPriceElement) {
