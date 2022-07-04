@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RubberDucksSubcategory extends BasePage{
+public class RubberDucksSubcategory extends BasePage {
     private By sortByNameBtn = By.xpath("//a[@class='button' and contains(text(),'Name')]");
     private By sortByPriceBtn = By.xpath("//a[@class='button' and contains(text(),'Name')]");
     private By sortByPopularityBtn;
