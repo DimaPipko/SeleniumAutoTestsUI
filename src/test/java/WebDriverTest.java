@@ -1,7 +1,7 @@
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pageObject.*;
+import PO.pageObject.*;
 
 import java.util.List;
 

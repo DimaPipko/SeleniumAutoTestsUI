@@ -1,9 +1,7 @@
-package pageObject;
+package PO.pageObject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
-import static org.openqa.selenium.remote.http.DumpHttpExchangeFilter.LOG;
 
 public class DeliveryInformation extends BasePage {
     public By deliveryInfo = By.xpath("//ul[@class='list-horizontal']/li[contains(text(),'Delivery Information')]");

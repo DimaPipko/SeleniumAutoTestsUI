@@ -1,8 +1,8 @@
-package pageObjectStatic;
+package PO.pageObject.pageObjectStatic;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import pageObject.BasePage;
+import PO.pageObject.BasePage;
 
 public class RubberDucks extends BasePage {
 

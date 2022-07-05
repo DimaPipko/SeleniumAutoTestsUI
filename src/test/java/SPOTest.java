@@ -1,8 +1,8 @@
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pageObject.BaseTest;
-import pageObjectStatic.RubberDucks;
+import PO.pageObject.BaseTest;
+import PO.pageObject.pageObjectStatic.RubberDucks;
 
 public class SPOTest extends BaseTest {
     @Test

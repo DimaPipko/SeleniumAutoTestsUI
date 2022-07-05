@@ -1,7 +1,8 @@
-package pageObject;
+package PO.pageObject;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -11,7 +12,12 @@ public class BaseTest {
 
     @BeforeMethod
     public void setup() {
-        driver = new ChromeDriver();
+        Browsers browser = Browsers.valueOf(System.getProperty("browser", "chrome"));
+
+        switch (browser) {
+            case chrome -> driver = new ChromeDriver();
+            case firefox -> driver = new FirefoxDriver();
+        }
         driver.get(baseURL);
     }
 
